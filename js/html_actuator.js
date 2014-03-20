@@ -59,17 +59,18 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   var seed = Math.log(tile.value) / Math.log(2);
   var rand = Math.floor(Math.random() * 4) + 1;
-  var randImage = "img/" + seed + "/" + rand + ".gif";
-  console.log(classes);
-  console.log(randImage);
-
-  if (tile.value > 2048) classes.push("tile-super");
+  var imgUrl = "img/" + seed + "/" + rand + ".gif";
+  
+  if (tile.value > 2048) {
+    imgUrl = "img/11/4.gif";
+    classes.push("tile-super");
+  }
 
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
-  inner.style.backgroundImage = "url("+randImage+")";
+  //inner.textContent = tile.value;
+  inner.style.backgroundImage = "url(" + imgUrl + ")";
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -95,8 +96,6 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   // Put the tile on the board
   this.tileContainer.appendChild(wrapper);
-
-  console.log(wrapper);
 };
 
 HTMLActuator.prototype.applyClasses = function (element, classes) {
