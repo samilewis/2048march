@@ -19,8 +19,8 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         if (cell) {
           self.addTile(cell);
           metadata.seed = metadata.seed + 1;
-          console.log(metadata.seed);
-          self.updateSeed(metadata.seed);
+          //console.log(metadata.seed);
+          //self.updateSeed(metadata.seed);
         }
       });
     });
@@ -150,6 +150,6 @@ HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-over");
 };
 
-HTMLActuator.prototype.updateSeed = function (seed) {
-  this.seedContainer.textContent = seed;
-};
+//HTMLActuator.prototype.updateSeed = function (seed) {
+//  this.seedContainer.textContent = seed;
+//};
