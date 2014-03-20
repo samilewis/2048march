@@ -1,4 +1,6 @@
-Note: This is a clone of 2048, created by [gabrielcirulli](https://github.com/gabrielecirulli/). The content below is a copy and paste of the README.md from Gabriel's version of 2048. This repository is for my version of 2048, [March Madness-style](http://albertlyu.github.io/2048march/).
+Note: This is a clone of 2048, created by [gabrielcirulli](https://github.com/gabrielecirulli/). The commit version I forked from Gabriel's 2048 on 03/18/2014 was [01264c3252c3e0311c8b79b2c88f0902ec81b8f4](https://github.com/gabrielecirulli/2048/commit/01264c3252c3e0311c8b79b2c88f0902ec81b8f4).
+
+This repository is for my version of 2048, [March Madness-style](http://albertlyu.github.io/2048march/). The content below is a copy and paste of the README.md from Gabriel's version of 2048.
 
 # 2048
 
