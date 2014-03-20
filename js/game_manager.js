@@ -38,6 +38,7 @@ GameManager.prototype.setup = function () {
   this.grid        = new Grid(this.size);
 
   this.score       = 0;
+  this.seed        = 1;
   this.over        = false;
   this.won         = false;
   this.keepPlaying = false;
@@ -76,6 +77,7 @@ GameManager.prototype.actuate = function () {
     score:      this.score,
     over:       this.over,
     won:        this.won,
+    seed:       this.seed,
     bestScore:  this.scoreManager.get(),
     terminated: this.isGameTerminated()
   });

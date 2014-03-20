@@ -3,6 +3,7 @@ function HTMLActuator() {
   this.scoreContainer   = document.querySelector(".score-container");
   this.bestContainer    = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
+  this.seedContainer    = document.querySelector(".seed-container");
 
   this.score = 0;
 }
@@ -17,6 +18,9 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
       column.forEach(function (cell) {
         if (cell) {
           self.addTile(cell);
+          metadata.seed = metadata.seed + 1;
+          console.log(metadata.seed);
+          self.updateSeed(metadata.seed);
         }
       });
     });
@@ -144,4 +148,8 @@ HTMLActuator.prototype.clearMessage = function () {
   // IE only takes one value to remove at a time.
   this.messageContainer.classList.remove("game-won");
   this.messageContainer.classList.remove("game-over");
+};
+
+HTMLActuator.prototype.updateSeed = function (seed) {
+  this.seedContainer.textContent = seed;
 };
