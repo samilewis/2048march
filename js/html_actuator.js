@@ -57,12 +57,19 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
+  var seed = Math.log(tile.value) / Math.log(2);
+  var rand = Math.floor(Math.random() * 4) + 1;
+  var randImage = "img/" + seed + "/" + rand + ".gif";
+  console.log(classes);
+  console.log(randImage);
+
   if (tile.value > 2048) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
   inner.textContent = tile.value;
+  inner.style.backgroundImage = "url("+randImage+")";
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -88,6 +95,8 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   // Put the tile on the board
   this.tileContainer.appendChild(wrapper);
+
+  console.log(wrapper);
 };
 
 HTMLActuator.prototype.applyClasses = function (element, classes) {
